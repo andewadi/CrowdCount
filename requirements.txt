@@ -1,0 +1,5 @@
+ultralytics
+opencv-python
+numpy
+# Optional for DeepSORT integration:
+deep_sort_realtime

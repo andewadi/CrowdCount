@@ -1,0 +1,1 @@
+{"total_live": 0, "total_cumulative": 223, "zones": {"Zone 1": {"live": 0, "total": 1, "alert": false}, "Zone 2": {"live": 0, "total": 0, "alert": false}, "Zone 3": {"live": 0, "total": 110, "alert": false}, "Zone 4": {"live": 0, "total": 112, "alert": false}}, "global_alert": false, "threshold": 20, "timestamp": "01:44:42"}

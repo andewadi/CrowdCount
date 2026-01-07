@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrowdCount Dashboard</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>📊 CrowdCount Dashboard</h1>
+<p id="user-info" style="margin-bottom: 16px; color: #9CA3AF;"></p>
+
+<!-- CONTROLS -->
+<div class="card">
+    <label>
+        Threshold:
+        <input type="number" id="threshold" value="10" min="0">
+    </label>
+    <button onclick="applyThreshold()">Set Threshold</button>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <label>
+        Refresh Frequency (sec):
+        <input type="number" id="frequency" value="1" min="1">
+    </label>
+    <button onclick="applyFrequency()">Set Frequency</button>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <button onclick="downloadCSV()">Download Logs (CSV)</button>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="card">
+        <h3>Live Count</h3>
+        <h1 id="live">0</h1>
+    </div>
+
+    <div class="card">
+        <h3>Total Count</h3>
+        <h1 id="total">0</h1>
+    </div>
+
+    <div class="card">
+        <h3>Last Update</h3>
+        <h2 id="last-update">--:--:--</h2>
+    </div>
+</div>
+
+<!-- MAIN COMPACT GRAPH -->
+<div class="card compact-graph">
+    <h3>People Count Over Time</h3>
+    <canvas id="peopleChart"></canvas>
+</div>
+
+<!-- ZONE TABLE -->
+<div class="card">
+    <h3>Zone-wise Count</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Zone</th>
+                <th>Live</th>
+                <th>Total</th>
+        
+            </tr>
+        </thead>
+        <tbody id="zone-body"></tbody>
+    </table>
+</div>
+<!--login overlay-->
+<div id="login-overlay" class="overlay">
+    <div class="login-card">
+        <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Sign in to CrowdCount</p>
+        </div>
+
+        <div class="login-body">
+            <input id="username" placeholder="Username">
+            <input id="password" type="password" placeholder="Password">
+            <button onclick="login()">Sign In</button>
+            <p id="login-error"></p>
+        </div>
+
+        <div class="login-footer">
+            <span>Admin & User access supported</span>
+        </div>
+    </div>
+</div>
+
+
+<script src="/static/app.js"></script>
+</body>
+</html>
